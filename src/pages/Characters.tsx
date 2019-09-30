@@ -44,7 +44,13 @@ export default function Characters() {
 
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("touchmove", handleScroll, {
+      passive: false
+    });
+    return () => {
+      window.removeEventListener("touchmove", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [handleScroll]);
 
   React.useEffect(() => {
