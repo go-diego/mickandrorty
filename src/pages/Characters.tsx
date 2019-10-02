@@ -30,7 +30,8 @@ export default function Characters() {
 
   const handleScroll = React.useCallback(() => {
     if (
-      window.innerHeight + document.documentElement.scrollTop !==
+      window.innerHeight +
+        (document.documentElement.scrollTop || window.pageYOffset) !==
       document.documentElement.offsetHeight
     )
       return;
@@ -44,13 +45,7 @@ export default function Characters() {
 
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("touchmove", handleScroll, {
-      passive: false
-    });
-    return () => {
-      window.removeEventListener("touchmove", handleScroll);
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
   React.useEffect(() => {
