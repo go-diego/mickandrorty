@@ -18,7 +18,7 @@ export default function Layout({ children }: Props) {
         <meta property="og:title" content="Mick & Rorty" />
         <meta
           property="og:description"
-          content="An Unofficial Rick and Morty app"
+          content="Mick and Rorty is an unofficial web application that allows the user to search through a list of Rick and Morty characters, locations, and episodes using the Rick and Morty API."
         />
         <meta property="og:image" content={ogImg} />
       </Helmet>
