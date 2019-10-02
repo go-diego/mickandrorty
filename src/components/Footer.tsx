@@ -24,6 +24,7 @@ export default function Footer() {
         <a
           className="has-text-weight-bold has-text-white"
           href="https://www.godiego.me"
+          rel="noopener noreferrer"
           target="_blank"
         >
           Diego Bernal
